@@ -13,6 +13,8 @@ JLCXX_API void initialize(jl_value_t* julia_module, jl_value_t* cppfunctioninfo_
   g_cxxwrap_module = (jl_module_t*)julia_module;
   g_cppfunctioninfo_type = (jl_datatype_t*)cppfunctioninfo_type;
 
+  register_core_types();
+
   InitHooks::instance().run_hooks();
 }
 
